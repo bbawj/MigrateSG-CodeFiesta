@@ -1,0 +1,93 @@
+.home {
+  height: 100%;
+}
+
+.heroImage {
+  display: flex;
+  background-image: url("../hero.jpg");
+  width: 100%;
+  height: 60%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heroImageText {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  padding: 3em;
+  color: white;
+  justify-content: space-between;
+}
+
+.heroImageText > h2 {
+  justify-self: flex-start;
+}
+
+.heroImageText > div {
+  display: flex;
+  align-items: center;
+}
+
+.heroImageText > div > p {
+  margin-right: 1em;
+}
+
+.homeTextContainer {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  padding: 2em 0 2em 2em;
+}
+
+.homeText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  text-align: left;
+  padding: 2em;
+}
+
+.homeTextImage {
+  display: flex;
+  background-image: url("../Right.png");
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  height: 62px;
+  width: 100%;
+  background-color: var(--accent1dark);
+  justify-content: space-between;
+  padding: 2em 5em 2em 5em;
+  align-items: center;
+  color: white;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  flex: 0.3;
+  justify-content: space-between;
+}
+
+.header > div > p {
+  margin-right: 1em;
+}
+.headerLogo {
+  display: flex;
+  background-image: url("../MigrateSG.png");
+  height: 60px;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,82 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--accent2);
+}
+
+.card1,
+.card2 {
+  background-color: white;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  /* max-width: 500px; */
+}
+
+.card1 {
+  background-color: #c0bdbd;
+  background-color: white;
+}
+
+.qr {
+  display: flex;
+  background-image: url("../qr.png");
+  height: 70%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: 2px solid #c0bdbd;
+}
+
+.inputContainer > input {
+  border: none;
+  border-bottom: 2px solid var(--special);
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+.card2 > form {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.card2 > form > h1 {
+  text-align: left;
+}
+.card2 > p {
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  justify-content: center;
+  align-self: center;
+}
+
+.loginformFields {
+  padding: 1em 1em 1em 0;
+}
+
+@media (min-width: 768px) {
+  .login {
+    flex-direction: row;
+  }
+  .card1,
+  .card2 {
+    height: 60%;
+    width: 40%;
+  }
+}
