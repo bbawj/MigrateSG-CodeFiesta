@@ -7,10 +7,6 @@ export default function Header() {
   const history = useHistory();
   return (
     <div className="header">
-      {/* <h2>
-        Migrate
-        <span style={{ color: "var(--primary)" }}>SG</span>
-      </h2> */}
       <div className="headerLogo"></div>
       <div>
         <p>Guides</p>

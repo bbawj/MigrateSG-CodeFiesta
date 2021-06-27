@@ -8,34 +8,42 @@ import { Button } from "@material-ui/core";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
 import PersonIcon from "@material-ui/icons/Person";
+import WorkQuestion from "./WorkQuestion";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import LoopIcon from "@material-ui/icons/Loop";
 
 export default function Question() {
   const [question, setQuestion] = useState({});
+  const [prevQn, setPrevQn] = useState({});
   const history = useHistory();
-
-  console.log("rendered");
 
   useEffect(() => {
     const questionInfo = JSON.parse(localStorage.getItem("questionInfo"));
     if (questionInfo) {
       setQuestion(questionInfo);
     }
+    if (questionInfo.type === "completed") {
+      history.push("/dashboard");
+    }
   }, []);
 
-  function updateQuestionInfo(type, id, value) {
-    setQuestion({ type: type, id: id, value: value });
+  function updateQuestionInfo(type, id, value, rest) {
+    setQuestion({ type: type, id: id, value: value, ...rest });
     localStorage.setItem(
       "questionInfo",
-      JSON.stringify({ type: type, id: id, value: value })
+      JSON.stringify({ type: type, id: id, value: value, ...rest })
     );
+    if (type === "completed") {
+      history.push("/dashboard");
+    }
   }
 
   return (
     <div>
       <Header />
       <div className="questionHeader">
-        <h2>Completion Progress: {question.value}%</h2>
-        <LinearProgress variant="determinate" value={question.value} />
+        <h2>Completion Progress: {question.value || 0}%</h2>
+        <LinearProgress variant="determinate" value={question.value || 0} />
       </div>
       <div className="questionContent">
         {question.type === "start" && (
@@ -61,7 +69,11 @@ export default function Question() {
             <div className="categorySelect">
               <div className="categoryChoice">
                 <WorkIcon />
-                <Button variant="contained" color="primary">
+                <Button
+                  onClick={() => updateQuestionInfo("work", 1, 30)}
+                  variant="contained"
+                  color="primary"
+                >
                   WORK
                 </Button>
               </div>
@@ -80,7 +92,26 @@ export default function Question() {
             </div>
           </div>
         )}
+        {question.type === "work" && (
+          <WorkQuestion id={question.id} updateInfo={updateQuestionInfo} />
+        )}
       </div>
+      {(question.type === "start" || question.type === "category") && (
+        <div className="questionNav">
+          <Button
+            onClick={() => updateQuestionInfo("start", 0, 0)}
+            startIcon={<ArrowBackIcon />}
+          >
+            Go Back
+          </Button>
+          <Button
+            onClick={() => updateQuestionInfo("start", 0, 0)}
+            startIcon={<LoopIcon />}
+          >
+            Restart
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

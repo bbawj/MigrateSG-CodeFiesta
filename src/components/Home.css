@@ -66,7 +66,7 @@
   display: flex;
   height: 62px;
   width: 100%;
-  background-color: var(--accent1dark);
+  background-image: url("../headerHero.png");
   justify-content: space-between;
   padding: 2em 5em 2em 5em;
   align-items: center;
@@ -87,6 +87,7 @@
   display: flex;
   background-image: url("../MigrateSG.png");
   height: 60px;
+  flex: 0.5;
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;

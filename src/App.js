@@ -1,7 +1,6 @@
 import "./App.css";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Questionnaire from "./components/Questionnaire";
 import Signup from "./components/Signup";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
@@ -34,7 +33,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/questionnaire" component={Questionnaire} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/question" component={Question} />
           </Router>
