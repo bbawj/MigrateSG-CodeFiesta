@@ -3,7 +3,7 @@
 }
 
 .dashboardHeroImage {
-  background-image: url(../dashboardhero.png);
+  background-image: url(../img/dashboardhero.png);
   height: 30%;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,9 +18,6 @@
   gap: 1em;
 }
 
-.cardRequired {
-  grid-column: span 3;
-}
 .cardGrid > h2 {
   grid-column: span 3;
   text-align: left;
@@ -32,6 +29,11 @@
   flex-direction: column;
   text-align: left;
   padding: 2em;
+  opacity: 0.5;
+}
+.cardRequired {
+  grid-column: span 3;
+  opacity: 1;
 }
 .cardTitle {
   flex: 0.7;

@@ -33,7 +33,7 @@
 
 .qr {
   display: flex;
-  background-image: url("../qr.png");
+  background-image: url("../img/qr.png");
   height: 70%;
   width: 100%;
   background-repeat: no-repeat;

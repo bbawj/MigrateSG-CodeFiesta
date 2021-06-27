@@ -4,14 +4,44 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
 
+const cardDetails = {
+  entre: [
+    {
+      name: "EntrePass",
+      desc: "The EntrePass allows eligible foreign entrepreneurs to start and operate a business in Singapore that is venture-backed or possesses innovative technologies.",
+    },
+    { name: "S-Pass" },
+    { name: "Personalised Employment Pass" },
+    { name: "Work Permit Foreign Worker" },
+  ],
+  exec: [
+    {
+      name: "Employment Pass",
+      desc: "The Employment Pass allows foreign professionals, managers and executives to work in Singapore. Candidates need to earn at least $4,500 a month and have acceptable qualifications.",
+    },
+    { name: "S-Pass" },
+    { name: "Personalised Employment Pass" },
+    { name: "EntrePass" },
+  ],
+};
+
 export default function Dashboard() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState("");
   const history = useHistory();
   console.log(cards);
   useEffect(() => {
     const questionInfo = JSON.parse(localStorage.getItem("questionInfo"));
-    if (questionInfo && questionInfo.profession === "entrepreneur") {
-      setCards([0, 1, 2, 3]);
+    if (questionInfo) {
+      switch (questionInfo.profession) {
+        case "entrepreneur":
+          setCards("entre");
+          break;
+        case "executive":
+          setCards("exec");
+          break;
+        default:
+          break;
+      }
     }
   }, []);
   return (
@@ -38,7 +68,7 @@ export default function Dashboard() {
           <div>
             <p>
               Based on your questionnaire results, we suggest that you apply for
-              the
+              the {cards && cardDetails[cards][0].name}
             </p>
             <Button
               onClick={() => {
@@ -57,13 +87,13 @@ export default function Dashboard() {
         </div>
       </div>
       <h2>Suggested</h2>
-      {!(cards.length === 0) && (
+      {cards && (
         <div className="cardGrid">
-          <Card key={cards[0]} id={cards[0]} />
+          <Card idx={0} info={cardDetails[cards][0]} />
           <h2>Others</h2>
-          {cards.map((card, idx) => {
+          {cardDetails[cards].map((card, idx) => {
             if (idx === 0) return null;
-            return <Card key={card} id={card} />;
+            return <Card key={card.name} idx={idx} info={card} />;
           })}
         </div>
       )}

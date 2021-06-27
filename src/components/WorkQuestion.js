@@ -123,32 +123,30 @@ export default function WorkQuestion({ id, value, updateInfo }) {
           </div>
           <div className="categoryChoiceDesc">
             The Employment Pass is for foreign professionals who: <br />
-            <p>
-              <ul>
-                <li>Have a job offer in Singapore.</li>
-                <li>Work in a managerial, executive or specialised job.</li>
-                <li>
-                  Earn a fixed monthly salary of at least $4,500 (older, more
-                  experienced candidates need higher salaries).
-                </li>
-                <li>
-                  Have acceptable qualifications, usually a good university
-                  degree, professional qualifications or specialised skills.
-                </li>
-              </ul>
-              The Personalised Employment Pass (PEP) is eligible if you are:
-              <ul>
-                <li>
-                  An overseas foreign professional and your last drawn fixed
-                  monthly salary overseas was at least $18,000. Your last drawn
-                  salary should have been within 6 months before you apply.{" "}
-                </li>
-                <li>
-                  An Employment Pass holder earning a fixed monthly salary of at
-                  least $12,000.
-                </li>
-              </ul>
-            </p>
+            <ul>
+              <li>Have a job offer in Singapore.</li>
+              <li>Work in a managerial, executive or specialised job.</li>
+              <li>
+                Earn a fixed monthly salary of at least $4,500 (older, more
+                experienced candidates need higher salaries).
+              </li>
+              <li>
+                Have acceptable qualifications, usually a good university
+                degree, professional qualifications or specialised skills.
+              </li>
+            </ul>
+            The Personalised Employment Pass (PEP) is eligible if you are:
+            <ul>
+              <li>
+                An overseas foreign professional and your last drawn fixed
+                monthly salary overseas was at least $18,000. Your last drawn
+                salary should have been within 6 months before you apply.{" "}
+              </li>
+              <li>
+                An Employment Pass holder earning a fixed monthly salary of at
+                least $12,000.
+              </li>
+            </ul>
           </div>
           <div className="categoryChoiceDesc">
             You can apply for an EntrePass if you meet conditions:
