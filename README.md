@@ -1,2 +1,6 @@
 ### MigrateSG CodeFiesta
-With node installed, in the command line run: npm start
+With node installed
+
+Install dependencies: npm install
+
+Start local instance: npm start
